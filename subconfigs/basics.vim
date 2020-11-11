@@ -17,7 +17,7 @@ set shiftwidth=4
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
-set relativenumber                      " Line numbers
+set number relativenumber                      " Line numbers
 set cursorline                          " Enable highlighting of the current line
 colorscheme gruvbox                     " Best theme ever
 set background=dark                     " tell vim what the background color looks like
