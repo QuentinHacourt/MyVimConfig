@@ -1,6 +1,6 @@
 " some sane basic settings
 syntax on                              " Enables syntax highlighing
-set hidden                              " Required to keep multiple buffers open multiple buffers
+" set hidden                              " Required to keep multiple buffers open
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
 set pumheight=10                        " Makes popup menu smaller
@@ -36,3 +36,4 @@ set colorcolumn=80
 set wildmode=longest,list,full          " Enable autocompletion:
 " autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o      " Disables automatic commenting on newline:
 let g:indentLine_char = '┆'             " indentation
+set nohlsearch                          " no highlighting when searching with /

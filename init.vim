@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader=","
 
 source $HOME/.config/nvim/subconfigs/plug.vim
 source $HOME/.config/nvim/subconfigs/basics.vim
