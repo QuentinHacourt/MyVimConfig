@@ -49,8 +49,12 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     " flutter
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'thosakwe/vim-flutter'
+    " cpp
+    Plug 'vim-syntastic/syntastic'
+    Plug 'rhysd/vim-clang-format'
 call plug#end()
 
+colorscheme gruvbox                     " Best theme ever
 let g:gruvbox_contrast_dark = 'hard'    " Obviously we need high contrast
 
 " some sane basic settings
@@ -75,10 +79,8 @@ set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set number relativenumber                      " Line numbers
 set cursorline                          " Enable highlighting of the current line
-colorscheme gruvbox                     " Best theme ever
 set noswapfile
 set background=dark                     " tell vim what the background color looks like
-let g:gruvbox_contrast_dark = 'hard'    " Obviously we need high contrast
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
@@ -91,7 +93,7 @@ filetype plugin on
 set smartcase
 set colorcolumn=80
 set wildmode=longest,list,full          " Enable autocompletion:
-" autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o      " Disables automatic commenting on newline:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o      " Disables automatic commenting on newline:
 let g:indentLine_char = '┆'             " indentation
 set nohlsearch                          " no highlighting when searching with /
 set exrc
