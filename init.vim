@@ -59,7 +59,6 @@ let g:gruvbox_contrast_dark = 'hard'    " Obviously we need high contrast
 
 " some sane basic settings
 syntax on                              " Enables syntax highlighing
-set exrc
 set hidden                              " Required to keep multiple buffers open
 set nowrap                              " Display long lines as just one line
 set encoding=utf-8                      " The encoding displayed
