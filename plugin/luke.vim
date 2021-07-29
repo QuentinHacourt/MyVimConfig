@@ -1,20 +1,11 @@
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set linebreak \| set wrap <CR>
+	" map <leader>f :Goyo \| set linebreak \| set wrap <CR>
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
-
-" Nerd tree
-	map <C-n> :NERDTreeToggle<CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    if has('nvim')
-        let NERDTreeBookmarksFile = stdpath('data') . '/NERDTreeBookmarks'
-    else
-        let NERDTreeBookmarksFile = '~/.vim' . '/NERDTreeBookmarks'
-    endif
 
 " vimling:
 	nm <leader>d :call ToggleDeadKeys()<CR>

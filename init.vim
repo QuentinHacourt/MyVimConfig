@@ -22,10 +22,13 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     Plug 'stsewd/fzf-checkout.vim'
     " add vscode features to vim
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
     " Elixir plugins
     Plug 'elixir-editors/vim-elixir'
     " Colorscheme
     Plug 'morhetz/gruvbox'
+    Plug 'dracula/vim'
+
     " go plugin
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
     " search stuff with ctrl + p
@@ -41,6 +44,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     Plug 'maksimr/vim-jsbeautify'
     " Typescript
     Plug 'leafgarland/typescript-vim'
+    Plug 'peitalin/vim-jsx-typescript'
     " html
     " indentation
     " Plug 'Yggdroot/indentLine'
@@ -57,9 +61,6 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     " automatically close html tags
     Plug 'alvan/vim-closetag'
 call plug#end()
-
-colorscheme gruvbox                     " Best theme ever
-let g:gruvbox_contrast_dark = 'hard'    " Obviously we need high contrast
 
 " some sane basic settings
 syntax on                              " Enables syntax highlighing
