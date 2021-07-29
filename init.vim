@@ -52,6 +52,10 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     " cpp
     Plug 'vim-syntastic/syntastic'
     Plug 'rhysd/vim-clang-format'
+    " hard mode:
+    Plug 'dusans/vim-hardmode'
+    " automatically close html tags
+    Plug 'alvan/vim-closetag'
 call plug#end()
 
 colorscheme gruvbox                     " Best theme ever
