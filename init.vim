@@ -102,4 +102,6 @@ let g:indentLine_char = '┆'             " indentation
 set nohlsearch                          " no highlighting when searching with /
 set exrc
 set scrolloff=8
+set sidescrolloff=5
 set foldlevelstart=20
+set undodir='~/.config/nvim/undodir'
