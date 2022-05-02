@@ -27,7 +27,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     Plug 'elixir-editors/vim-elixir'
     " Colorscheme
     Plug 'morhetz/gruvbox'
-    Plug 'dracula/vim'
+    " Plug 'dracula/vim'
 
     " go plugin
     Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -60,6 +60,14 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     Plug 'dusans/vim-hardmode'
     " automatically close html tags
     Plug 'alvan/vim-closetag'
+    " latex
+    Plug 'lervag/vimtex'
+    " Plug 'Konfekt/FastFold'
+    " Plug 'matze/vim-tex-fold'
+
+    " frontend
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+    Plug 'jparise/vim-graphql'
 call plug#end()
 
 " some sane basic settings
