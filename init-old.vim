@@ -21,8 +21,7 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
     " git
     Plug 'stsewd/fzf-checkout.vim'
     " add vscode features to vim
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver']
+    Plug 'neovim/nvim-lspconfig'
     " Elixir plugins
     Plug 'elixir-editors/vim-elixir'
     " Colorscheme
