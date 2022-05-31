@@ -3,7 +3,8 @@ return require('packer').startup(function()
   use {'wbthomason/packer.nvim', opt = true}
 
   -- Color scheme
-  use { 'sainnhe/gruvbox-material' }
+  use 'marko-cerovac/material.nvim'
+  -- use { 'sainnhe/gruvbox-material' }
 
   -- Fuzzy finder
   use {
@@ -32,19 +33,32 @@ return require('packer').startup(function()
   -- Fugitive for Git
   use { 'tpope/vim-fugitive' }
 
-  -- Nerd tree
-  use { 'preservim/nerdtree' }
-
-  -- Goyo
-  use { 'junegunn/goyo.vim' }
+  -- NvimTree tree
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 
   use { 'jreybert/vimagit' }
-  use { 'lukesmithxyz/vimling' }
-  use { 'vimwiki/vimwiki' }
 
-
-  use { 'bling/vim-airline' }
-  use { 'tpope/vim-commentary' }
+  use { 'kyazdani42/nvim-web-devicons' }
+  use {
+    'yamatsum/nvim-nonicons',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
   use { 'ap/vim-css-color' }
 
   -- Go plugin
@@ -79,5 +93,16 @@ return require('packer').startup(function()
     config = function()
         require('gitsigns').setup()
     end
+  }
+  -- pairs
+  use {
+    'ZhiyuanLck/smart-pairs',
+    event = 'InsertEnter',
+    config = function() require('pairs'):setup() end
+  }
+  -- Buffers
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
   }
 end)
