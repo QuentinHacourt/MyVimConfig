@@ -11,6 +11,8 @@ return require('packer').startup(function()
       'nvim-telescope/telescope.nvim',
       requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
   }
+
+  -- LSP
   use {
     'VonHeikemen/lsp-zero.nvim',
     branch = 'v2.x',
@@ -31,6 +33,8 @@ return require('packer').startup(function()
       {'L3MON4D3/LuaSnip'},     -- Required
     }
   }
+  -- JAVA LSP extra features
+  -- use 'mfussenegger/nvim-jdtls'
   -- Lua development
   use { 'tjdevries/nlua.nvim' }
 
