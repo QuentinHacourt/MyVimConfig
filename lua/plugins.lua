@@ -1,120 +1,121 @@
 return require('packer').startup(function()
-  -- Packer can manage itself as an optional plugin
-  use {'wbthomason/packer.nvim', opt = true}
+    -- Packer can manage itself as an optional plugin
+    use { 'wbthomason/packer.nvim', opt = true }
 
-  -- Color scheme
-  use 'marko-cerovac/material.nvim'
-  -- use { 'sainnhe/gruvbox-material' }
+    -- Color scheme
+    use 'marko-cerovac/material.nvim'
+    -- use { 'sainnhe/gruvbox-material' }
 
-  -- Fuzzy finder
-  use {
-      'nvim-telescope/telescope.nvim',
-      requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-  }
-
-  -- LSP
-  use {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v2.x',
-    requires = {
-      -- LSP Support
-      {'neovim/nvim-lspconfig'},             -- Required
-      {                                      -- Optional
-        'williamboman/mason.nvim',
-        run = function()
-          pcall(vim.cmd, 'MasonUpdate')
-        end,
-      },
-      {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
-      -- Autocompletion
-      {'hrsh7th/nvim-cmp'},     -- Required
-      {'hrsh7th/cmp-nvim-lsp'}, -- Required
-      {'L3MON4D3/LuaSnip'},     -- Required
+    -- Fuzzy finder
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } }
     }
-  }
-  -- JAVA LSP extra features
-  -- use 'mfussenegger/nvim-jdtls'
-  -- Lua development
-  use { 'tjdevries/nlua.nvim' }
 
-  -- Vim dispatch
-  use { 'tpope/vim-dispatch' }
+    -- LSP
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' }, -- Required
+            {
+                                 -- Optional
+                'williamboman/mason.nvim',
+                run = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
+            },
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-  -- Fugitive for Git
-  use { 'tpope/vim-fugitive' }
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'L3MON4D3/LuaSnip' }, -- Required
+        }
+    }
+    -- JAVA LSP extra features
+    -- use 'mfussenegger/nvim-jdtls'
+    -- Lua development
+    use { 'tjdevries/nlua.nvim' }
 
-  -- NvimTree tree
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
+    -- Vim dispatch
+    use { 'tpope/vim-dispatch' }
 
-  use { 'jreybert/vimagit' }
+    -- Fugitive for Git
+    use { 'tpope/vim-fugitive' }
 
-  use { 'kyazdani42/nvim-web-devicons' }
-  use {
-    'yamatsum/nvim-nonicons',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-  use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-  }
-  use { 'ap/vim-css-color' }
+    -- NvimTree tree
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = {
+            'kyazdani42/nvim-web-devicons', -- optional, for file icon
+        },
+        tag = 'nightly'               -- optional, updated every week. (see issue #1193)
+    }
 
-  -- Go plugin
-  use { 'fatih/vim-go' }
+    use { 'jreybert/vimagit' }
 
-  -- Javascript
-  use { 'pangloss/vim-javascript' }
+    use { 'kyazdani42/nvim-web-devicons' }
+    use {
+        'yamatsum/nvim-nonicons',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+    use { 'ap/vim-css-color' }
 
-  -- Jsx
-  use { 'maxmellon/vim-jsx-pretty' }
-  use { 'maksimr/vim-jsbeautify' }
+    -- Go plugin
+    use { 'fatih/vim-go' }
 
-  -- Typescript
-  use { 'leafgarland/typescript-vim' }
-  use { 'peitalin/vim-jsx-typescript' }
+    -- Javascript
+    use { 'pangloss/vim-javascript' }
 
-  -- -- Flutter
-  -- use { 'dart-lang/dart-vim-plugin' }
-  -- use { 'thosakwe/vim-flutter' }
+    -- Jsx
+    use { 'maxmellon/vim-jsx-pretty' }
+    use { 'maksimr/vim-jsbeautify' }
 
-  -- Treesitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
+    -- Typescript
+    use { 'leafgarland/typescript-vim' }
+    use { 'peitalin/vim-jsx-typescript' }
 
-  use {
-    "ray-x/lsp_signature.nvim",
-  }
-  use {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-        require('gitsigns').setup()
-    end
-  }
-  -- pairs
-  use {
-    'ZhiyuanLck/smart-pairs',
-    event = 'InsertEnter',
-    config = function() require('pairs'):setup() end
-  }
-  -- Buffers
-  use {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
-  use "lukas-reineke/lsp-format.nvim"
+    -- -- Flutter
+    -- use { 'dart-lang/dart-vim-plugin' }
+    -- use { 'thosakwe/vim-flutter' }
+
+    -- Treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+
+    use {
+        "ray-x/lsp_signature.nvim",
+    }
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
+    -- pairs
+    use {
+        'ZhiyuanLck/smart-pairs',
+        event = 'InsertEnter',
+        config = function() require('pairs'):setup() end
+    }
+    -- Buffers
+    use {
+        'romgrk/barbar.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' }
+    }
+    use "lukas-reineke/lsp-format.nvim"
 end)
